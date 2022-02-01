@@ -17,7 +17,7 @@ const renderWeekDays = function() {
 
     weekDays.forEach(function(day) {
 
-        if (screen.width < 576) {
+        if (screen.width < 1200) {
             
             const weekDay = `<p class="week__day">${Array.from(day).splice(0,2).join('')}</p>`;
             calendarWkDays.insertAdjacentHTML('beforeend', weekDay);

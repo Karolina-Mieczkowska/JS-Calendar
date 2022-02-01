@@ -6,49 +6,105 @@
 /* .week__day */
 /* .header__date */
 
-.calendar,
+:root {
+    --background-clr: #2D2D35;
+    --surface-clr: #484855;
+    --primary-clr: #6868E4;
+    --secondary-clr: #5AA6F2;
+    --primary-light-clr: #A3A3F8;
+    --on-background-clr: #F5F5F5;
+    --on-surface-clr: #F8F3F3;
+    --on-primary-clr: #1E1E1E;
+    --on-secondary-clr: #272727;
+}
+
+/* .calendar,
 .calendar__header,
 .calendar__week-days,
 .calendar__main {
     border: 2px solid #444;
-}
+} */
 
 body {
     font-family: 'Roboto', sans-serif;
+    background: var(--background-clr);
 }
 
 p {
     margin: 0;
 }
 
+.btn {
+    border: none;
+    background: none;
+    /* background: var(--secondary-clr); */
+}
+
+.btn__arrow {
+    padding: .5rem;
+}
+
+.btn__arrow:hover {
+    /* transform: scale(1.2); */
+    cursor: pointer;
+    background: var(--secondary-clr);
+}
+
+svg {
+    height: 36px;
+    width: 36px;
+    fill: var(--on-primary-clr);
+}
+
+.calendar__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: var(--primary-light-clr);
+    color: var(--on-primary-clr);
+}
+
 .header__date {
-    padding: .75rem .5rem;
+    padding: 1.75rem .5rem;
     font-size: 1.75rem;
     font-weight: 600;
 }
 
 .calendar__week-days {
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
+    display: flex;
+    /* grid-template-columns: repeat(7,1fr); */
+    /* grid-gap: 2px; */
+    /* background: var(--surface-clr); */
+    color: var(--on-secondary-clr);
+    font-weight: 600;
+    margin: 2px 0;
 }
 
 .week__day {
-    padding: .25rem .5rem;
-    border-left: 1px solid #777;
+    padding: .5rem;
+    background: var(--secondary-clr);
+    /* border: 1px solid #777; */
+    flex-basis: 14.3%;
+    margin-right: 2px;
+    max-width: 14.3%;
+}
+
+.week__day:last-child {
+    margin-right: 0;
 }
 
 .calendar__main {
     display: grid;
     grid-template-columns: repeat(7,1fr);
     /* grid-template-rows: auto; */
-    grid-gap: 0px;
+    grid-gap: 2px;
     /* height: 40vh; */
 }
 
 .main__square-day {
-    border-left: 1px solid #777;
-    border-top: 1px solid #777;
-    padding: .5rem;
+    /* border-left: 1px solid #777;
+    border-top: 1px solid #777; */
+    padding: .75rem;
     font-size: 1.25rem;
     /* text-align: center; */
     box-sizing: border-box;
@@ -56,9 +112,18 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: var(--surface-clr);
+    color: var(--on-surface-clr);
 }
 
-@media only screen and (min-width: 1200px) {
+.main__square-day:hover {
+    background: var(--primary-clr);
+    color: var(--on-primary-clr);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
 
     .calendar {
         max-width: 60%;
@@ -66,12 +131,6 @@ p {
     }
 
     .main__square-day {
-        border-left: 1px solid #777;
-        border-top: 1px solid #777;
-        padding: .5rem;
-        font-size: 1.25rem;
-        /* text-align: center; */
-        box-sizing: border-box;
         display: block;
     }
 }
