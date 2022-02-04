@@ -116,7 +116,7 @@ svg {
     color: var(--on-surface-clr);
 }
 
-.main__square-day:hover {
+.main__square-day--hoover:hover {
     background: var(--primary-clr);
     color: var(--on-primary-clr);
     font-weight: 600;
